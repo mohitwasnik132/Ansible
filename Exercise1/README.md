@@ -2,11 +2,11 @@
 
 ## :technologist: AGENDA
 
-        :octocat: Learn about Inventory File and inter-connectivity setup between resources
-        :octocat: Configure inventory file
-        :octocat: Execute and Debug inventory file.
-        :octocat: Learn Blocks of inventory file.
-        :octocat: learn best practice and produce final file.
+  :octocat: Learn about Inventory File and inter-connectivity setup between resources
+  :octocat: Configure inventory file
+  :octocat: Execute and Debug inventory file.
+  :octocat: Learn Blocks of inventory file.
+  :octocat: learn best practice and produce final file.
 
 ### WHAT IS INVENTORY FILE IN ANSIBLE.
 
