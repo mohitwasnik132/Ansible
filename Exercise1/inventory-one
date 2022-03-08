@@ -8,3 +8,10 @@ node2
 
 [dbservers]
 dbserver
+
+[myapp:children]
+webservers
+dbservers
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
