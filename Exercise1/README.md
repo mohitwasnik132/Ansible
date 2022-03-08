@@ -1,4 +1,25 @@
-# Ansible - Exercise1
+# Ansible - Exercise1 - Basics
+
+## :technologist: AGENDA
+
+        :octocat: Learn about Inventory File and inter-connectivity setup between resources
+        :octocat: Configure inventory file
+        :octocat: Execute and Debug inventory file.
+        :octocat: Learn Blocks of inventory file.
+        :octocat: learn best practice and produce final file.
+
+### WHAT IS INVENTORY FILE IN ANSIBLE.
+
+An inventory file in ansible is _list of managed hosts_ declared under a host group using either `hostnames` or `IP addresses` in a plain text file upon which commands, modules, and tasks in a playbook operate.
+-The file can be in one of many formats depending on your Ansible environment and plugins
+
+- Default location : `/etc/ansible/hosts` and Alternate locations are allowed.
+- There are _TWO TYPES_ of inventories.
+  - STATIC : User defined and has fixed/Static values
+  - DYNAMIC : Takes input from certain script to populate it's contents.
+- Ansible usually connects to it's hosts defined in the inventory via SSH (Unix based systems) and WinRM (windows systems).
+
+### Configure inventory file.
 
 - Added the inventory file.
   - added `node1 ansible_host=private_ip ansible_user=devops ansible_ssh_password = devops`
@@ -85,3 +106,5 @@ the warning in the pink text can easily be fixed by updating python to python3. 
 - Here is test :point_down:
 
   ![Children Added](/Exercise1/assets/children%20pinged.png "children added")
+
+  Here, I wrap this exercise about `ANSIBLE INVENTORY` and little bit of connectivity.
