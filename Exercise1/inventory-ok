@@ -1,0 +1,19 @@
+node1 ansible_host=172.31.14.4
+node2 ansible_host=172.31.0.58
+dbserver ansible_host=172.31.35.246
+
+[webservers]
+node1
+node2
+
+[dbservers]
+dbserver
+
+[myapp:children]
+webservers
+dbservers
+
+[all:vars]
+ansible_user=devops 
+ansible_ssh_password=devops
+ansible_python_interpreter=/usr/bin/python3
