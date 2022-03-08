@@ -50,3 +50,28 @@ the warning in the pink text can easily be fixed by updating python to python3. 
     ansible -i inverntory-one -m ping dbserver
   ```
 - If you get SUCCESS! `{Ping:Pong}` then it worked, test for webserver group as well
+
+### Group and Children
+
+- As `groups` are convenient to apply config to multiple but selective hosts, there is a mechanism called `Children groups` which are basically `Group of Groups` in an inventory file
+  these children can be defined with `[name_of_choice:children]` followed by name of groups as we defined hosts.
+  ```json
+  [myapp:children]
+  webservers
+  dbserver
+  ```
+- This can help apply same config to group of groups, as in maybe in a situation you need your certain app installed on only application servers and web-servers but do not want it on adatabse servers. So you simply define `Children` accordingly.
+- Variables can be applied to such children via `[children_name:vars]`
+- There are certain rules to be followed to avoid headache!
+
+  - Any host that is member of a child group is automatically a member of the parent group.
+
+  - A child group’s variables will have higher precedence (override) a parent group’s variables.
+
+  - Groups can have multiple parents and children, but not circular relationships.
+
+  - Hosts can also be in multiple groups, but there will only be one instance of a host, merging the data from the multiple groups
+
+- Refer [this](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#inheriting-variable-values-group-variables-for-groups-of-groups) documentation for more insight.
+- Here is test :point_down:
+  ![Children Added](/Exercise1/assets/children-pinged.png "children added")
