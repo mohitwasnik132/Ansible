@@ -17,7 +17,7 @@
 
 - `-m ping node1` works now. `{ping : pong}`
 
-![Ping Success](Exercise1/assets/Ping%20Sucess%20nodes.png "a title")
+![Ping Success](/Exercise1/assets/Ping%20Sucess%20nodes.png "a title")
 
 the warning in the pink text can easily be fixed by updating python to python3. But current goal was to check connectivity between the Control and node.
 (or follow [this](https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html) document.)
