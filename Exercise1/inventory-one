@@ -1,0 +1,2 @@
+node1 ansible_host=172.31.14.4 ansible_user=devops ansible_ssh_password=devops
+node2 ansible_host=172.31.0.58 ansible_user=devops ansible_ssh_password=devops
