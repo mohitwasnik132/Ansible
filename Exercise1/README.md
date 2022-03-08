@@ -55,7 +55,7 @@ the warning in the pink text can easily be fixed by updating python to python3. 
 
 - As `groups` are convenient to apply config to multiple but selective hosts, there is a mechanism called `Children groups` which are basically `Group of Groups` in an inventory file
   these children can be defined with `[name_of_choice:children]` followed by name of groups as we defined hosts.
-  ```json
+  ```yaml
   [myapp:children]
   webservers
   dbserver
