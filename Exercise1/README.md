@@ -17,7 +17,36 @@
 
 - `-m ping node1` works now. `{ping : pong}`
 
-![Ping Success](https://github.com/mohitwasnik132/Ansible/blob/main/Exercise1/Ping%20Sucess%20nodes.png "a title")
-  
-   the warning in the pink text can easily be fixed by updating python to python3. But current goal was to check connectivity between the Control and node.
-   (or follow [this](https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html) document.)
+![Ping Success](Exercise1/assets/Ping%20Sucess%20nodes.png "a title")
+
+the warning in the pink text can easily be fixed by updating python to python3. But current goal was to check connectivity between the Control and node.
+(or follow [this](https://docs.ansible.com/ansible/latest/reference_appendices/interpreter_discovery.html) document.)
+
+## Ansible Groups
+
+- The ansible Groups are variables that contain the information about the hosts
+- Groups in a inventory file are convenient way to apply configuration to multiple hosts at once.
+- Refer [this](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#assigning-a-variable-to-many-machines-group-variables) document for configuration.
+
+![Server Added](/Exercise1/assets/added%20db%20server.png "server added")
+
+### Push SSH_KEY into the new server for connectivity and authentication support
+
+- login as `devops` user in `control machine` and `cd /home/devops/.ssh/`
+
+  ```bash
+  [devops@ansible-engine .ssh]$ sudo ssh-copy-id devops@172.31.35.246   #private_ip_dbserver
+  Are you sure you want to continue connecting (yes/no)? yes
+  devops@172.31.35.246's password: devops
+  Number of key(s) added: 1
+
+  Now try logging into the machine, with:   "ssh 'devops@172.31.35.246'"
+  and check to make sure that only the key(s) you wanted were added.
+  ```
+
+- This should add `public key` (content of id_rsa.pub) to `authorized keys` of dbserver.
+  - test `group` works.
+  ```bash
+    ansible -i inverntory-one -m ping dbserver
+  ```
+- If you get SUCCESS! `{Ping:Pong}` then it worked, test for webserver group as well
