@@ -74,4 +74,4 @@ the warning in the pink text can easily be fixed by updating python to python3. 
 
 - Refer [this](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#inheriting-variable-values-group-variables-for-groups-of-groups) documentation for more insight.
 - Here is test :point_down:
-  ![Children Added](/Exercise1/assets/children-pinged.png "children added")
+  ![Children Added](/Exercise1/assets/children%20pinged.png "children added")
