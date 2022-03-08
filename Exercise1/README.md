@@ -72,6 +72,15 @@ the warning in the pink text can easily be fixed by updating python to python3. 
 
   - Hosts can also be in multiple groups, but there will only be one instance of a host, merging the data from the multiple groups
 
+-The variables can be given at `Host level` or `Group level`
+
+- the best practice is to give same parameters to group-hosts so that group level variables may be assigned to all relevant hosts at once.
+- E.g Same User, Same Password, Same Interpreter..
+- `[all:vars]` list/block defines variable that are common across infrastructure available.
+- `[group_name:vars]` block can be defined to hold variables for specific group.
+- The clean, good-practice followed file [`inventory-ok`](/Exercise1/inventory-ok) is now added for comparison.
+- It's evidently more readable and better visible than it's [predecessor](/Exercise1/inventory-one).
+
 - Refer [this](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#inheriting-variable-values-group-variables-for-groups-of-groups) documentation for more insight.
 - Here is test :point_down:
 
