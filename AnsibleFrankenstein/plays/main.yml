@@ -1,0 +1,7 @@
+---
+- name: Playbook_1
+  import_playbook: winping.yaml
+- name: Playbook_2
+  import_playbook: choco.yaml
+- name: Playbook_3
+  import_playbook: choco.yaml
